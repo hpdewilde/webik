@@ -115,6 +115,17 @@ def register():
 def play():
     return render_template("play.html")
 
+@app.route("/create", methods = ["GET", "POST"])
+def create():
+    # user clicks one of the buttons
+    if request.method == "POST":
+        # use HTML buttons with the ‘name’ and ‘value’ attributes
+        if request.form["choice"] == "create":
+            return render_template("create_question.html")
+        elif request.form["choice"] == "rate":
+            return render_template("rate_question.html")
+    if request.method == "GET":
+        return render_template("create.html")
 
 """
 @app.route("/question", methods = ["GET", "POST"])
@@ -127,18 +138,6 @@ def question():
 
     if request.method == "GET":
         return render_template("question.html")
-
-@app.route(“/create”, methods = ["GET", "POST"]
-def create():
-    # user clicks one of the buttons
-    if request.method == "POST":
-        # use HTML buttons with the ‘name’ and ‘value’ attributes
-        if request.form[“choice”] == “create”:
-            return render_template(“create_question.html”)
-        elif request.form[“choice”] == “rate”:
-            return render_template(“rate_question.html”)
-    if request.method == "GET":
-        return render_template(“create.html”)
 
 @app.route(“/create_question”, methods = ["GET", "POST"]
 def create_question():
