@@ -222,3 +222,30 @@ body {
   margin: 100px auto;
 }
 
+  .btn-signup {
+    display: block;
+    margin: 0 auto;
+    color: coral;
+    margin-top: 300px;
+    padding: 18px 28px;
+    font-size: 50px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+  }
+  
+#slogan {
+  display: block;
+  color: coral;
+  margin-top: 150px;
+  font-size: 25px
+}
+
+#quote {
+  display: block;
+  color: coral;
+  margin-top: 150px;
+  font-size: 25px
+}
+    
