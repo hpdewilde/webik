@@ -117,6 +117,7 @@ def play():
 
 @app.route("/create", methods = ["GET", "POST"])
 def create():
+    """
     # user clicks one of the buttons
     if request.method == "POST":
         # use HTML buttons with the ‘name’ and ‘value’ attributes
@@ -124,6 +125,7 @@ def create():
             return render_template("create_question.html")
         elif request.form["choice"] == "rate":
             return render_template("rate_question.html")
+    """
     if request.method == "GET":
         return render_template("create.html")
 
@@ -154,12 +156,14 @@ def create_question():
 @app.route(“leaderboards”, methods = ["GET"]
 def leaderboards():
     render_template(“leaderboards.html”)
-
-@app.route(“profile”, methods = ["GET", "POST"]
-def profile():
-    if request.method == "POST"
-        # user wants to change profile information
-        return render_template(“settings.html”)
-    if request.method == "GET":
-        return render_template(“profile.html”)
 """
+
+@app.route("/profile", methods = ["GET", "POST"])
+def profile():
+    if request.method == "GET":
+        rows = db.execute("SELECT * FROM users WHERE id = :id", id=session.get("user_id"))
+        print(rows)
+        username = rows[0]['username']
+        # password = len(rows[0]['password']) * "*"
+        return render_template("profile.html", username=username)
+
