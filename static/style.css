@@ -22,7 +22,7 @@
 body {
     background-image: url("dice.jpg");
     background-repeat: no-repeat;
-    background-position: right top;
+    background-position: center;
 }
 
 /**
@@ -45,7 +45,7 @@ body {
 
 .btn-gameactive {
     display: block;
-    color: coral;
+    color: #f97976;
     margin-left: 8px;
     margin-right: 8px;
     margin-top: 20px;
@@ -59,7 +59,7 @@ body {
 
 .score {
     display: block;
-    color: coral;
+    color: #f97976;
     margin-top: 100px;
     padding: 18px 78px;
     font-size: 25px;
@@ -71,7 +71,7 @@ body {
 
 .question-lg {
     display: block;
-    color: coral;
+    color: #f97976;
     margin-left: 8px;
     margin-right: 8px;
     margin-top: 20px;
@@ -99,7 +99,7 @@ body {
 
 .timer {
     display: block;
-    color: coral;
+    color: #f97976;
     margin-left: 8px;
     margin-right: 8px;
     margin-top: 20px;
@@ -108,20 +108,20 @@ body {
 }
 
 #question {
-  color: coral;
+  color: #f97976;
   margin-left: 8px;
   margin-right: 8px;
   font-size: 40px;
 }
 .question-label {
-  color: coral;
+  color: #f97976;
   margin-left: 8px;
   margin-right: 8px;
   margin-top: 20px;
 }
 
 #answer {
-  color: coral;
+  color: #f97976;
   margin-left: 8px;
   margin-right: 8px;
   margin-top: 20px;
@@ -130,7 +130,7 @@ body {
 
 /* for the login system */
 .modal-login {
-  color: coral;
+  color: #f97976;
   width: 350px;
 }
 
@@ -153,7 +153,7 @@ body {
 }
 
 .modal-login .form-control:focus {
-  border-color: coral;
+  border-color: #f97976;
 }
 
 .modal-login .form-control, .modal-login .btn {
@@ -191,7 +191,7 @@ body {
   height: 95px;
   border-radius: 50%;
   z-index: 9;
-  background: coral;
+  background: #f97976;
   padding: 15px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
 }
@@ -205,7 +205,7 @@ body {
   .modal-login .btn {
       color: #fff;
       border-radius: 4px;
-  background: coral;
+  background: #f97976;
   text-decoration: none;
   transition: all 0.4s;
       line-height: normal;
