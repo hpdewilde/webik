@@ -1,0 +1,129 @@
+/**
+ * <!-- or this #f97976 -->
+ */
+.navbar {
+  background-color: #f97976;
+}
+
+.navbar-brand {
+  color: #fff;
+}
+
+.nav-btn {
+  margin-left: 8px;
+  margin-right: 8px;
+  padding:15px;
+}
+
+.nav-btn:hover {
+  color: #f97976;
+}
+
+body {
+    background-image: url("dice.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+/**
+ * Extra large button extensions. Extends `.btn`.
+ */
+.btn-xlg {
+    display: block;
+    background-color: #f97976;
+    color: #fff;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 300px;
+    padding: 18px 28px;
+    font-size: 80px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+    }
+
+.btn-lg {
+    display: block;
+    color: coral;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 20px;
+    padding: 18px 78px;
+    font-size: 25px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+    }
+
+.score {
+    display: block;
+    color: coral;
+    margin-top: 100px;
+    padding: 18px 78px;
+    font-size: 25px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+    }
+
+.question-lg {
+    display: block;
+    color: coral;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 20px;
+    padding: 18px 570px;
+    font-size: 25px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
+.center-block {
+    float:none;
+}
+
+
+.custom-button-width {
+  	width:150px;
+  }
+
+.custom-input-width {
+  	width:150px;
+      margin-right:3px;
+  }
+
+.timer {
+    display: block;
+    color: coral;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 20px;
+    padding: 18px 570px;
+    font-size: 25px
+}
+
+#question {
+  color: coral;
+  margin-left: 8px;
+  margin-right: 8px;
+  font-size: 40px;
+}
+.question-label {
+  color: coral;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 20px;
+}
+
+#answer {
+  color: coral;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 20px;
+  font-size: 25px;
+}
