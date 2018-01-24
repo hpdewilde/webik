@@ -1,39 +1,17 @@
-<!Doctype html>
+{% extends "layout.html" %}
 
-<html lang="en">
+{% block title %}
+    logout_screen
+{% endblock %}
 
-  <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css"/>
-
-  <title>Trivia</title>
-
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg">
-
-      <a class="navbar-brand" href="#">T R I V I A</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-        </ul>
-      </div>
-    </nav>
+{% block main %}
 
     <div class="container" id="quote">
       <p>
         <font color="#FFFFFF"><center>Thanks for visiting our website,</center></font>
           <p><font color="#FFFFFF"><center>“An investment in knowledge always pays the best interest.”</center></font></p>
-          <meta http-equiv="refresh" content="5;frontpage.html" />  
+          <meta http-equiv="refresh" content="5;frontpage.html" />
       </p>
     </div>
+
+{% endblock %}
