@@ -1,15 +1,17 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Play
+   Play
 {% endblock %}
 
 {% block main %}
-    <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-6 offset-md-5 center-block">
-              <button type="button" class="btn play-btn btn-default btn-xlg btn-outline-light">P L A Y</button>
-          </div>
-      </div>
-    </div>
+   <form action="{{ url_for('play') }}" method="post">
+       <div class="container-fluid">
+         <div class="row">
+             <div class="col-md-4 offset-md-4 center-block">
+                 <center><a class="btn btn-outline-light play-btn btn-default btn-xlg" href="{{ url_for('play_activegame') }}">PLAY GAME</a></center>
+             </div>
+         </div>
+       </div>
+   </form>
 {% endblock %}
