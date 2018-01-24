@@ -9,7 +9,7 @@ r = requests.get(url)
 
 output = r.json()
 
-for i in range(9):
+for i in range(10):
     for i in range(len(output['results'])):
         result = output['results'][i]
         question = result['question']
