@@ -19,3 +19,5 @@ Fill with information about user performance in the game.
 Issue: users can register with the same username. 
 ##### rate_question.html
 Create an interface where users can rate questions created by other users.
+##### Database table: questions
+We now have a database containing 50 questions that we added by running the db.py file. (The maximum that we could add in one go via the API was 50.) We still have to expand this database with a lot more questions.
