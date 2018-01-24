@@ -113,12 +113,14 @@ def register():
 
 @app.route("/play", methods = ["GET", "POST"])
 def play():
-    return render_template("play.html")
+    if request.method == "GET":
+        return render_template("play.html")
 
 
 @app.route("/play_activegame", methods = ["GET", "POST"])
 def play_activegame():
-    return render_template("play_activegame.html")
+    if request.method == "GET":
+        return render_template("play_activegame.html")
 
 
 @app.route("/create", methods = ["GET", "POST"])
@@ -161,17 +163,6 @@ def rate_question():
 
 
 """
-@app.route("/question", methods = ["GET", "POST"])
-def question():
-    # user is on question page and selects an answer
-    if request.method == "POST":
-        # renders question.html again with new question
-        # function located in helpers.py
-        generate_question()
-
-    if request.method == "GET":
-        return render_template("question.html")
-
 @app.route(“leaderboards”, methods = ["GET"]
 def leaderboards():
     render_template(“leaderboards.html”)
@@ -181,8 +172,6 @@ def leaderboards():
 def profile():
     if request.method == "GET":
         rows = db.execute("SELECT * FROM users WHERE id = :id", id=session.get("user_id"))
-        print(rows)
         username = rows[0]['username']
-        # password = len(rows[0]['password']) * "*"
         return render_template("profile.html", username=username)
 
