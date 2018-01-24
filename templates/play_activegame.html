@@ -1,111 +1,65 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html lang="en">
+{% block title %}
+    Play Activegame
+{% endblock %}
 
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% block main %}
+  <form action="{{ url_for('play_activegame') }}" method="post">
+      <div class="timer">
+        <div class="col-md-6 offset-md-4 center-block">
+          <p id="demo"></p>
+            <script>
+              // Set the date we're counting down to
+              var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+              // Update the count down every 1 second
+              var x = setInterval(function() {
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css"/>
+                  // Get todays date and time
+                  var now = new Date().getTime();
 
-    <title>Trivia</title>
-  </head>
+                  // Find the distance between now an the count down date
+                  var distance = countDownDate - now;
 
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg">
+                  // Time calculations for days, hours, minutes and seconds
+                  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      <a class="navbar-brand" href="#">T R I V I A</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+                  // Output the result in an element with id="demo"
+                  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                  + minutes + "m " + seconds + "s ";
 
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="btn btn-outline-light nav-btn btn-space-navbar" href="#">P L A Y</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-outline-light nav-btn btn-space-navbar" href="#">C R E A T E</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-outline-light nav-btn btn-space-navbar" href="#">P R O F I L E</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-outline-light nav-btn btn-space-navbar" href="#">L E A D E R B O A R D S</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-outline-light nav-btn btn-space-navbar" href="#">L O G O U T</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div class="timer">
-      <div class="col-md-6 offset-md-4 center-block">
-        <p id="demo"></p>
-          <script>
-            // Set the date we're counting down to
-            var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
-
-            // Update the count down every 1 second
-            var x = setInterval(function() {
-
-                // Get todays date and time
-                var now = new Date().getTime();
-
-                // Find the distance between now an the count down date
-                var distance = countDownDate - now;
-
-                // Time calculations for days, hours, minutes and seconds
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                // Output the result in an element with id="demo"
-                document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-                + minutes + "m " + seconds + "s ";
-
-                // If the count down is over, write some text
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("demo").innerHTML = "EXPIRED";
-                }
-            }, 1000);
-          </script>
-      </div>
-    </div>
-    <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-6 offset-md-2 center-block">
-              <button type="button" class="btn play-btn btn-default question-lg btn-outline-light">QUESTION</button>
-          </div>
-  		    <div class="col-md-6 offset-md-5 center-block">
-              <button type="button" class="btn play-btn btn-default btn-lg btn btn-outline-light">ANSWER 1</button>
-		          <button type="button" class="btn play-btn btn-default btn-lg btn btn-outline-light">ANSWER 2</button>
-              <button type="button" class="btn play-btn btn-default btn-lg btn btn-outline-light">ANSWER 3</button>
-			        <button type="button" class="btn play-btn btn-default btn-lg btn btn-outline-light">ANSWER 4</button>
-          </div>
-      </div>
-    </div>
-    <div class = "row">
-      <div class="col-md-4 offset-md-2">
-        <div style=" text-align: center;" > <h4 class="score"> SCORE </h4>
-            <!-- HIER MOET EEN SCOREBORD KOMEN MET AANTALEN GOED EN FOUT  -->
+                  // If the count down is over, write some text
+                  if (distance < 0) {
+                      clearInterval(x);
+                      document.getElementById("demo").innerHTML = "EXPIRED";
+                  }
+              }, 1000);
+            </script>
         </div>
       </div>
-    </div>
-
-
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
-
-</html>
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-md-2 center-block">
+                <button type="button" class="btn play-btn btn-default question-lg btn-outline-light">QUESTION</button>
+            </div>
+    		    <div class="col-md-6 offset-md-5 center-block">
+                <button type="button" class="btn play-btn btn-default btn-lg btn btn-outline-light">ANSWER 1</button>
+  		          <button type="button" class="btn play-btn btn-default btn-lg btn btn-outline-light">ANSWER 2</button>
+                <button type="button" class="btn play-btn btn-default btn-lg btn btn-outline-light">ANSWER 3</button>
+  			        <button type="button" class="btn play-btn btn-default btn-lg btn btn-outline-light">ANSWER 4</button>
+            </div>
+        </div>
+      </div>
+      <div class = "row">
+        <div class="col-md-4 offset-md-2">
+          <div style=" text-align: center;" > <h4 class="score"> SCORE </h4>
+              <!-- HIER MOET EEN SCOREBORD KOMEN MET AANTALEN GOED EN FOUT  -->
+          </div>
+        </div>
+      </div>
+  </form>
+{% endblock %}
