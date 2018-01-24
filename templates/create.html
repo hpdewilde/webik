@@ -1,9 +1,21 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Apology
+    Create
 {% endblock %}
 
 {% block main %}
-    <img alt="Sorry!" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=http://i.imgur.com/A3ZR65I.png"/>
+    <form action="{{ url_for('create') }}" method="post">
+        <div class="container-fluid">
+          <div class="row">
+               <div class="col-md-4 offset-md-4 center-block">
+                  <center><a class="btn btn-outline-light play-btn btn-default btn-xlg" name="rate" href="{{ url_for('rate_question') }}">R A T E</a></center>
+               </div>
+               <div class="col-md-4 offset-md-4 center-block">
+                  <center><a class="btn btn-outline-light play-btn btn-default" id="testbutton"name="create" href="{{ url_for('create_question') }}">C R E A T E</a></center>
+              </div>
+              </div>
+          </div>
+        </div>
+    </form>
 {% endblock %}
