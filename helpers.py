@@ -32,9 +32,3 @@ def login_required(f):
             return redirect("/login")
         return f(*args, **kwargs)
     return decorated_function
-
-def get_random_answer():
-    return apology("TODO")
-
-def generate_question():
-    return apology("TODO")
