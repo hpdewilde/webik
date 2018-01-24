@@ -43,6 +43,33 @@ body {
             border-radius: 8px;
     }
 
+.btn-signup {
+   display: block;
+   margin: 0 auto;
+   color: coral;
+   margin-top: 300px;
+   padding: 18px 28px;
+   font-size: 50px;
+   line-height: normal;
+   -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+           border-radius: 8px;
+}
+
+#testbutton {
+    background-color: #f97976;
+    color: #fff;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 300px;
+    padding: 18px 28px;
+    font-size: 80px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
 .btn-gameactive {
     display: block;
     color: #f97976;
