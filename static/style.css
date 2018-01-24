@@ -68,7 +68,7 @@ body {
     -webkit-border-radius: 8px;
        -moz-border-radius: 8px;
             border-radius: 8px;
-}
+    }
 
 .btn-gameactive {
     display: block;
@@ -229,6 +229,7 @@ body {
 
 .modal-login.modal-dialog {
   margin-top: 80px;
+}
   .modal-login .btn {
       color: #fff;
       border-radius: 4px;
@@ -249,7 +250,7 @@ body {
   margin: 100px auto;
 }
 
-  .btn-signup {
+.btn-signup {
     display: block;
     margin: 0 auto;
     color: coral;
@@ -261,18 +262,19 @@ body {
        -moz-border-radius: 8px;
             border-radius: 8px;
   }
-  
-#slogan {
-  display: block;
-  color: coral;
-  margin-top: 150px;
-  font-size: 25px
+
+#slogan
+{
+ display: block;
+ color: coral;
+ margin-top: 150px;
+ font-size: 25px
 }
 
-#quote {
-  display: block;
-  color: coral;
-  margin-top: 150px;
-  font-size: 25px
+#quote
+{
+ display: block;
+ color: coral;
+ margin-top: 150px;
+ font-size: 25px
 }
-    
