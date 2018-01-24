@@ -120,7 +120,15 @@ def play():
 @app.route("/play_activegame", methods = ["GET", "POST"])
 def play_activegame():
     if request.method == "GET":
-        return render_template("play_activegame.html")
+        row = db.execute("SELECT * FROM questions WHERE id = :id", id=randint(501, 550))
+
+        question = row[0]['question']
+        correct_answer = row[0]['correct_answer']
+        wrong_answer1 = row[0]['wrong_answer1']
+        wrong_answer2 = row[0]['wrong_answer2']
+        wrong_answer3 = row[0]['wrong_answer3']
+
+        return render_template("play_activegame.html", question=question, correct_answer=correct_answer, wrong_answer1=wrong_answer1, wrong_answer2=wrong_answer2, wrong_answer3=wrong_answer3)
 
 
 @app.route("/create", methods = ["GET", "POST"])
@@ -141,9 +149,7 @@ def create():
 def create_question():
     # user clicks on submit button
     if request.method == "POST":
-        """
-        Store user entry in database
-        """
+        db.execute("INSERT INTO pending_questions (question, correct_answer, wrong_answer1, wrong_answer2, wrong_answer3) VALUES (:question, :correct_answer, :wrong_answer1, :wrong_answer2, :wrong_answer3)", question=request.form.get("question"), correct_answer=request.form.get("correct_answer"), wrong_answer1=request.form.get("wrong_answer1"), wrong_answer2=request.form.get("wrong_answer2"), wrong_answer3=request.form.get("wrong_answer3"))
         return redirect(url_for("create_question"))
 
     if request.method == "GET":
@@ -174,4 +180,22 @@ def profile():
         rows = db.execute("SELECT * FROM users WHERE id = :id", id=session.get("user_id"))
         username = rows[0]['username']
         return render_template("profile.html", username=username)
+
+@app.route("/changepassword", methods=["GET", "POST"])
+@login_required
+def changepassword():
+    if request.method == "POST":
+        if request.form["new_pw1"] == "" or request.form["new_pw2"] == "":
+            return apology("Must provide password twice")
+        elif request.form["new_pw1"] != request.form["new_pw2"]:
+            return apology("Passwords do not match")
+        else:
+            new_pw = request.form["new_pw1"]
+
+        db.execute("UPDATE users SET password = :password WHERE id = :id", password=pwd_context.hash(new_pw), id=session.get("user_id"))
+
+        return redirect(url_for("profile"))
+
+    else:
+        return render_template("changepassword.html")
 
