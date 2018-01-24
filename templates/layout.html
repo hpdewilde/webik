@@ -13,7 +13,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
-    
+
     <!-- Login function -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
@@ -33,7 +33,7 @@
         {% if session.user_id %}
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="btn btn-outline-light nav-btn btn-space-navbar" href="#">P L A Y</a>
+              <a class="btn btn-outline-light nav-btn btn-space-navbar" href="{{ url_for('play') }}">P L A Y</a>
             </li>
             <li class="nav-item">
               <a class="btn btn-outline-light nav-btn btn-space-navbar" href="{{ url_for('create') }}">C R E A T E</a>
