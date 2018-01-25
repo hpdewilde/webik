@@ -2,8 +2,6 @@
 ## TO DO
 ##### apology.html
 Issue: When the apology function runs, the user is not able to interact with the navigation bar anymore and is forced to close the window or return to the previous page.
-##### create.html
-Fix the page design using CSS.
 ##### index.html
 Build a suiting welcome page that the user sees before logging in.
 ##### leaderboard.html
@@ -21,3 +19,5 @@ Issue: users can register with the same username.
 Create an interface where users can rate questions created by other users.
 ##### Database table: questions
 We now have a database containing 50 questions that we added by running the db.py file. (The maximum that we could add in one go via the API was 50.) We still have to expand this database with a lot more questions.
+##### Overall
+Fix the design using CSS.
