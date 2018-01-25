@@ -5,15 +5,15 @@
 {% endblock %}
 
 {% block main %}
-    <form action="{{ url_for('create') }}" method="post">
+   <form action="{{ url_for('create') }}" method="post">
         <div class="container-fluid">
           <div class="row">
-               <div class="col-md-4 offset-md-4 center-block">
-                  <center><a class="btn btn-outline-light play-btn btn-default btn-xlg" name="rate" href="{{ url_for('rate_question') }}">R A T E</a></center>
+              <div class="col-md-4 offset-md-4 ">
+                  <a class="btn btn-outline-light btn-default  btn-xlg" name="create" href="{{ url_for('create_question') }}">C R E A T E</a>
                </div>
-               <div class="col-md-4 offset-md-4 center-block">
-                  <center><a class="btn btn-outline-light play-btn btn-default" id="testbutton"name="create" href="{{ url_for('create_question') }}">C R E A T E</a></center>
-              </div>
+               <div class="col-md-4 offset-md-4 ">
+                  <a class="btn btn-outline-light btn-default  btn-xlg" name="rate" href="{{ url_for('rate_question') }}">R A T E</a>
+               </div>
               </div>
           </div>
         </div>
