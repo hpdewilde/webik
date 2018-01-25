@@ -245,11 +245,6 @@ body {
   outline: none;
 }
 
-.trigger-btn {
-  display: inline-block;
-  margin: 100px auto;
-}
-
 .btn-signup {
     display: block;
     margin: 0 auto;
