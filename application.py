@@ -198,5 +198,5 @@ def changepassword():
         return redirect(url_for("profile"))
 
     else:
-        return render_template("changepassword.html")
+        return render_template("change_password.html")
 
