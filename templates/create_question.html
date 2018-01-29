@@ -8,31 +8,36 @@
     <form action="{{ url_for('create_question') }}" method="post">
        <fieldset>
          <div class="form-group">
-        <div class="col-6 col-md-8">
+			<div class="col-sm-8 offset-2">
               <label class="question-label"><h4>Fill in your question here:</h4></label>
               <input type="question" class="form-control" id="question" name="question" placeholder="Question">
         </div>
       </div>
 
-      <label class="question-label"><h4>Fill in your answers here:</h4></label>
-        <div class="row">
-          <div class="col">
-            <input type="answer" class="form-control" id="answer" name="correct_answer" placeholder="Correct answer">
+		<div class="col-sm-4 offset-2">
+			<label class="question-label"><h4>Fill in your answers here:</h4></label> 
+		</div>
+	
+      <div>
+          <div class="row">
+            <div class="col-sm-4 offset-2">
+              <input type="answer" class="form-control" id="answer" name="correct_answer" placeholder="Correct answer">
+            </div>
+            <div class="col-sm-4">
+              <input type="answer" class="form-control" id="answer" name="wrong_answer1" placeholder="Answer">
+            </div>
           </div>
-          <div class="col">
-            <input type="answer" class="form-control" id="answer" name="wrong_answer1" placeholder="Answer">
+          <div class="row">
+            <div class="col-sm-4 offset-2">
+              <input type="answer" class="form-control" id="answer" name="wrong_answer2" placeholder="Answer">
+            </div>
+            <div class="col-sm-4">
+              <input type="answer" class="form-control" id="answer" name="wrong_answer3" placeholder="Answer">
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <input type="answer" class="form-control" id="answer" name="wrong_answer2" placeholder="Answer">
+          <div class="container col-md-2 col-md-offset-4 question-submit">
+                  <button type="submit" class="btn play-btn btn-default btn-lg btn-outline-light center">SUBMIT your QUESTION</button>
           </div>
-          <div class="col">
-            <input type="answer" class="form-control" id="answer" name="wrong_answer3" placeholder="Answer">
-          </div>
-        </div>
-        <div class="container col-md-3 col-md-offset-4">
-                <button type="submit" class="btn play-btn btn-default btn-lg btn-outline-light">Submit your question</button>
         </div>
        </fieldset>
      </form>
