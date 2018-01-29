@@ -5,26 +5,41 @@
 {% endblock %}
 
 {% block main %}
+ <div class="container">
+		<div class="row transparent">
+			<div class="col-md-6">
+				<div class="tuyin first">
+					<span class="title">PROFILE INFO</span>
 
-    <div class="container">
-      <div class="row">
-        <div class="col" id="profile-box">
-            <h1>PROFILE INFORMATION</h1>
-            <h3>Username</h3>
-            <p>{{ username }}</p>
-            <h3>Password</h3>
-            <i>encrypted </i><a href="{{ url_for('changepassword') }}">(Change password?)</a>
-        </div>
-        <div class="col">
-          <h1>YOUR STATS</h1>
-          <h3>Questions answered</h3>
-          <p>...</p>
-          <h3>Correct answers</h3>
-          <p>... (... %)</p>
-          <h3>Wrong answers</h3>
-          <p>... (... %)</p>
-        </div>
-      </div>
-    </div>
+							<div class="text">
+								<h3>Username: </h3>
+								<p class="lead">{{ username }}</p>
 
+								<h3>Password</h3>
+								<i class="lead">encrypted </i><a class="lead" href="{{ url_for('changepassword') }}">(Change password?)</a>
+							</div>
+				</div>
+			</div>
+
+	<div class="col-md-6">
+		<div class="tuyin first">
+			<span class="title">YOUR STATS</span>
+
+				<div class="text">
+					<h3>Questions answered</h3>
+					<p>...</p>
+
+					<h3>Correct answers</h3>
+					<p>... (... %)</p>
+
+					<h3>Wrong answers</h3>
+					<p>... (... %)</p>
+
+					<h3>Your Score</h3>
+					<p>... (... %)</p>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}
