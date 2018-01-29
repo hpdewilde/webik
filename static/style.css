@@ -87,10 +87,14 @@ body {
           border-radius: 8px;
   }
 
+.question-submit {
+  margin-top: 25px;
+  font-size: 30px;
+  }
+
 .center-block {
   float:none;
   }
-
 
 .custom-button-width {
 	width:150px;
@@ -172,6 +176,7 @@ body {
   right: -5px;
   }
 
+/* hier moeten de kleuren veranderd worden voor de buttons */
 .modal-login .modal-footer {
   background: #ecf0f1;
   border-color: #dee4e7;
@@ -220,7 +225,7 @@ body {
   }
 
 .modal-login .btn:hover, .modal-login .btn:focus {
-  background: #45aba6;
+  background: #45aba6; /* hier moet de kleur veranderd worden */
   outline: none;
   }
 
