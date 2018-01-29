@@ -1,155 +1,129 @@
-/**
- * <!-- or this #f97976 -->
- */
+
 .navbar {
   background-color: #f97976;
-}
+  }
 
 .navbar-brand {
   color: #fff;
-}
+  }
 
 .nav-btn {
   margin-left: 8px;
   margin-right: 8px;
   padding:15px;
-}
+  }
 
 .nav-btn:hover {
   color: #f97976;
-}
+  }
 
 body {
-    background-image: url("dice.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-}
+  background-image: url("dice.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  }
+
+/* supposedly proper way to center a div */
+.center-div {
+  margin: 0 auto;
+  width: 100px;
+  }
 
 /**
  * Extra large button extensions. Extends `.btn`.
  */
 .btn-xlg {
-    display: block;
-    background-color: #f97976;
-    color: #fff;
-    margin-left: 8px;
-    margin-right: 8px;
-    margin-top: 300px;
-    padding: 18px 28px;
-    font-size: 80px;
-    line-height: normal;
-    -webkit-border-radius: 8px;
-       -moz-border-radius: 8px;
-            border-radius: 8px;
-    }
-
-/*
-.btn-signup {
-   display: block;
-    background-color: #f97976;
-    color: #fff;
-    margin-left: 8px;
-    margin-right: 8px;
-    margin-top: 100px;
-    padding: 18px 28px;
-    font-size: 80px;
-    line-height: normal;
-    -webkit-border-radius: 8px;
-       -moz-border-radius: 8px;
-            border-radius: 8px;
-    }
-*/
-
-#testbutton {
-    background-color: #f97976;
-    color: #fff;
-    margin-left: 8px;
-    margin-right: 8px;
-    margin-top: 300px;
-    padding: 18px 28px;
-    font-size: 80px;
-    line-height: normal;
-    -webkit-border-radius: 8px;
-       -moz-border-radius: 8px;
-            border-radius: 8px;
-    }
+  display: block;
+  background-color: #f97976;
+  color: #fff;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 300px;
+  padding: 18px 28px;
+  font-size: 80px;
+  line-height: normal;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  }
 
 .btn-gameactive {
-    display: block;
-    color: #f97976;
-    margin-left: 8px;
-    margin-right: 8px;
-    margin-top: 20px;
-    padding: 18px 78px;
-    font-size: 25px;
-    line-height: normal;
-    -webkit-border-radius: 8px;
-       -moz-border-radius: 8px;
-            border-radius: 8px;
-    }
+  display: block;
+  color: #f97976;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 20px;
+  padding: 18px 78px;
+  font-size: 25px;
+  line-height: normal;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  }
 
 .score {
-    display: block;
-    color: #f97976;
-    margin-top: 100px;
-    padding: 18px 78px;
-    font-size: 25px;
-    line-height: normal;
-    -webkit-border-radius: 8px;
-       -moz-border-radius: 8px;
-            border-radius: 8px;
-    }
+  display: block;
+  color: #f97976;
+  margin-top: 100px;
+  padding: 18px 78px;
+  font-size: 25px;
+  line-height: normal;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  }
 
 .question-lg {
-    display: block;
-    color: #f97976;
-    margin-left: 8px;
-    margin-right: 8px;
-    margin-top: 20px;
-    padding: 18px 570px;
-    font-size: 25px;
-    line-height: normal;
-    -webkit-border-radius: 8px;
-       -moz-border-radius: 8px;
-            border-radius: 8px;
-}
+  display: block;
+  color: #f97976;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 20px;
+  padding: 18px 570px;
+  font-size: 25px;
+  line-height: normal;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  }
 
 .center-block {
-    float:none;
-}
+  float:none;
+  }
 
 
 .custom-button-width {
-  	width:150px;
+	width:150px;
   }
 
 .custom-input-width {
-  	width:150px;
-      margin-right:3px;
+	width:150px;
+  margin-right:3px;
   }
 
 .timer {
-    display: block;
-    color: #f97976;
-    margin-left: 8px;
-    margin-right: 8px;
-    margin-top: 20px;
-    padding: 18px 570px;
-    font-size: 25px
-}
+  display: block;
+  color: #f97976;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 20px;
+  padding: 18px 570px;
+  font-size: 25px
+  }
 
 #question {
   color: #f97976;
   margin-left: 8px;
   margin-right: 8px;
   font-size: 40px;
-}
+  }
+
 .question-label {
   color: #f97976;
   margin-left: 8px;
   margin-right: 8px;
   margin-top: 20px;
-}
+  }
 
 #answer {
   color: #f97976;
@@ -157,60 +131,60 @@ body {
   margin-right: 8px;
   margin-top: 20px;
   font-size: 25px;
-}
+  }
 
 /* for the login system */
 .modal-login {
   color: #f97976;
   width: 350px;
-}
+  }
 
 .modal-login .modal-content {
   padding: 20px;
   border-radius: 5px;
   border: none;
-}
+  }
 
 .modal-login .modal-header {
   border-bottom: none;
-      position: relative;
-      justify-content: center;
-}
+  position: relative;
+  justify-content: center;
+  }
 
 .modal-login h4 {
   text-align: center;
   font-size: 26px;
   margin: 30px 0 -15px;
-}
+  }
 
 .modal-login .form-control:focus {
   border-color: #f97976;
-}
+  }
 
 .modal-login .form-control, .modal-login .btn {
   min-height: 40px;
   border-radius: 3px;
-}
+  }
 
 .modal-login .close {
-      position: absolute;
+  position: absolute;
   top: -5px;
   right: -5px;
-}
+  }
 
 .modal-login .modal-footer {
   background: #ecf0f1;
   border-color: #dee4e7;
   text-align: center;
-      justify-content: center;
+  justify-content: center;
   margin: 0 -20px -20px;
   border-radius: 5px;
   font-size: 13px;
-}
+  }
 
 .modal-login .modal-footer a {
   color: #999;
-}
+  }
 
 .modal-login .avatar {
   position: absolute;
@@ -225,47 +199,47 @@ body {
   background: #f97976;
   padding: 15px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-}
+  }
 
 .modal-login .avatar img {
   width: 100%;
-}
+  }
 
 .modal-login.modal-dialog {
   margin-top: 80px;
-}
-  .modal-login .btn {
-      color: #fff;
-      border-radius: 4px;
+  }
+
+.modal-login .btn {
+  color: #fff;
+  border-radius: 4px;
   background: #f97976;
   text-decoration: none;
   transition: all 0.4s;
-      line-height: normal;
-      border: none;
+  line-height: normal;
+  border: none;
   }
 
 .modal-login .btn:hover, .modal-login .btn:focus {
   background: #45aba6;
   outline: none;
-}
+  }
 
-#slogan
-{
- display: block;
- color: coral;
- margin-top: 150px;
- font-size: 25px
-}
+#slogan {
+  display: block;
+  color: coral;
+  margin-top: 150px;
+  font-size: 25px
+  }
 
-#quote
-{
- display: block;
- color: coral;
- margin-top: 150px;
- font-size: 25px
-}
+#quote {
+  display: block;
+  color: coral;
+  margin-top: 150px;
+  font-size: 25px
+  }
 
 /* style for profile */
+
 .transparent .tuyin {
 	margin-top: 20px;
 	background-color: rgba(255, 255, 255, 0.37);
@@ -301,4 +275,4 @@ body {
 	margin-bottom: 13px;
 	font-size: 16px;
 	text-align: justify;
-	}
+}
