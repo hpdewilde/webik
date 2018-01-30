@@ -5,13 +5,27 @@
 {% endblock %}
 
 {% block main %}
-   <form action="{{ url_for('play') }}" method="post">
+    <form action="{{ url_for('play') }}" method="post">
        <div class="container-fluid">
          <div class="row">
              <div class="col-md-4 offset-md-4 center-block">
                  <center><a class="btn btn-outline-light play-btn btn-default btn-xlg" href="{{ url_for('play_activegame') }}">PLAY GAME</a></center>
              </div>
          </div>
-       </div>
+      </div>
+
+      <div class="container">
+		   <div class="row transparent">
+			   <div class="col-sm-4 offset-4">
+				   <div class="tuyin first">
+				      <h3>Playing the game:</h3>
+				    	<p> <bold>  <br> The game consists of 1 question and 4 answers.</br>
+				    	    Only 1 answer is correct and the correct answer will give you +2 points.<br> </br>
+				    	    The wrong answer will you -1 point. The minimum points is 0, the maximum is infinity!
+				    	    </bold></p>
+				   </div>
+				</div>
+		   </div>
+	   </div>
    </form>
 {% endblock %}
