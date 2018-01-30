@@ -128,7 +128,34 @@ def play_activegame():
         wrong_answer2 = row[0]['wrong_answer2']
         wrong_answer3 = row[0]['wrong_answer3']
 
-        return render_template("play_activegame.html", question=question, correct_answer=correct_answer, wrong_answer1=wrong_answer1, wrong_answer2=wrong_answer2, wrong_answer3=wrong_answer3)
+        r = randint(1,4)
+
+        if r == 1:
+            answer1 = correct_answer
+            answer2 = wrong_answer1
+            answer3 = wrong_answer2
+            answer4 = wrong_answer3
+        elif r == 2:
+            answer2 = correct_answer
+            answer1 = wrong_answer1
+            answer3 = wrong_answer2
+            answer4 = wrong_answer3
+        elif r == 3:
+            answer3 = correct_answer
+            answer2 = wrong_answer1
+            answer1 = wrong_answer2
+            answer4 = wrong_answer3
+        else:
+            answer4 = correct_answer
+            answer2 = wrong_answer1
+            answer3 = wrong_answer2
+            answer1 = wrong_answer3
+
+        return render_template("play_activegame.html", question=question, answer1=answer1, answer2=answer2, answer3=answer3, answer4=answer4)
+
+    # user has selected an answer
+    if request.method == "POST":
+        return redirect(url_for("play_activegame"))
 
 
 @app.route("/create", methods = ["GET", "POST"])
