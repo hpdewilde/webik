@@ -47,6 +47,21 @@ body {
           border-radius: 8px;
   }
 
+.btn-rate {
+  display: block;
+  background-color: #f97976;
+  color: #fff;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 20px;
+  padding: 18px 28px;
+  font-size: 80px;
+  line-height: normal;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+}
+
 .btn-gameactive {
   display: block;
   color: #f97976;
