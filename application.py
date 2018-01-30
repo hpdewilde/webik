@@ -76,7 +76,7 @@ def logout():
     session.clear()
 
     # redirect user to login form
-     return render_template("logout_screen.html")
+    return render_template("logout_screen.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
