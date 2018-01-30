@@ -28,6 +28,10 @@ Session(app)
 # configure CS50 Library to use SQLite database
 db = SQL("sqlite:///trivia.db")
 
+@app.route("/")
+@login_required
+def index():
+    return apology("TODO")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
