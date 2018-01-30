@@ -117,10 +117,18 @@ def play():
         return render_template("play.html")
 
 
-@app.route("/play_activegame", methods = ["GET", "POST"])
-def play_activegame():
+@app.route("/question", methods = ["GET", "POST"])
+def question():
+    if request.method == "POST":
+        # check if answer was correct
+
+        print(request.form.get("choice"))
+
+        return redirect(url_for("question"))
+
     if request.method == "GET":
-        row = db.execute("SELECT * FROM questions WHERE id = :id", id=randint(501, 550))
+        Qid = randint(501, 550)
+        row = db.execute("SELECT * FROM questions WHERE id = :id", id=Qid)
 
         question = row[0]['question']
         correct_answer = row[0]['correct_answer']
@@ -151,11 +159,8 @@ def play_activegame():
             answer3 = wrong_answer2
             answer1 = wrong_answer3
 
-        return render_template("play_activegame.html", question=question, answer1=answer1, answer2=answer2, answer3=answer3, answer4=answer4)
 
-    # user has selected an answer
-    if request.method == "POST":
-        return redirect(url_for("play_activegame"))
+        return render_template("question.html", question=question, answer1=answer1, answer2=answer2, answer3=answer3, answer4=answer4, Qid=Qid)
 
 
 @app.route("/create", methods = ["GET", "POST"])
