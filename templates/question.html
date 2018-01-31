@@ -22,13 +22,18 @@
         </div>
       </div>
 
-      <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6 offset-md-2 center-block">
-                <button type="button" class="btn play-btn btn-default question-lg btn-outline-light">{{ question }}</button>
+      <div class="container" id="question-lg">
+        <div class="row transparent">
+  		    <div class="col-sm-4 offset-4">
+  			    <div class="tuyin first">
+                    <p>
+                        <center>{{ question }}</center>
+                    </p>
+                </div>
             </div>
+      </div>
 
-            <div class="col-md-6 offset-md-5 center-block">
+      <div class="col-sm-6 offset-md-4 center-block">
               <form action="{{ url_for('question') }}" method="post">
                 <fieldset>
                   <button type="submit" class="btn play-btn btn-default btn-lg btn btn-outline-light" name="choice" value="{{ question_id,answer1 }}">{{ answer1 }}</button>
