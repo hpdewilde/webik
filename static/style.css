@@ -47,8 +47,7 @@ body {
           border-radius: 8px;
   }
 
-/*
-.btn-rate {
+.btn-pswd {
   display: inline-block;
   background-color: #f97976;
   color: #fff;
@@ -56,13 +55,12 @@ body {
   margin-right: 8px;
   margin-top: 20px;
   padding: 18px 28px;
-  font-size: 80px;
+  font-size: 20px;
   line-height: normal;
   -webkit-border-radius: 8px;
      -moz-border-radius: 8px;
           border-radius: 8px;
-}
-*/
+  }
 
 .btn-gameactive {
   display: block;
@@ -155,7 +153,7 @@ body {
   }
 
 .question-label {
-  color: #f97976;
+  color: #FFF;
   margin-left: 8px;
   margin-right: 8px;
   margin-top: 20px;
@@ -270,7 +268,7 @@ body {
 
 #quote {
   display: block;
-  color: coral;
+  color: #FFFFFF;
   margin-top: 150px;
   font-size: 50px
   }
