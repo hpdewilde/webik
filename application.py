@@ -274,22 +274,5 @@ def profile():
 
         return render_template("profile.html", username=username, score=score, correct=correct, wrong=wrong, questions_answered=questions_answered, pct_correct=pct_correct, pct_wrong=pct_wrong)
 
-    
-@app.route("/changepassword", methods=["GET", "POST"])
-@login_required
-def changepassword():
-    if request.method == "POST":
-        if request.form["new_pw1"] == "" or request.form["new_pw2"] == "":
-            return apology("Must provide password twice")
-        elif request.form["new_pw1"] != request.form["new_pw2"]:
-            return apology("Passwords do not match")
-        else:
-            new_pw = request.form["new_pw1"]
-
-        db.execute("UPDATE users SET password = :password WHERE id = :id", password=pwd_context.hash(new_pw), id=session.get("user_id"))
-
-        return redirect(url_for("profile"))
-
-    else:
-        return render_template("changepassword.html")
+  
 
