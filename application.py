@@ -122,7 +122,23 @@ def question():
     if request.method == "POST":
         # check if answer was correct
 
-        print(request.form.get("choice"))
+        result = request.form.get("choice")
+        question_id, user_answer = result.split(", ")
+
+        question_id = question_id.strip("(")
+        user_answer = user_answer[1:-2]
+
+        correct_answer = db.execute("SELECT correct_answer FROM questions WHERE id = :question_id", question_id=question_id)
+        correct_answer = correct_answer[0]["correct_answer"]
+
+        score = db.execute("SELECT score FROM users WHERE id = :id", id=session.get("user_id"))
+        score = score[0]["score"]
+
+        if user_answer == correct_answer:
+            db.execute("UPDATE users SET score = score + 2 WHERE id = :id", id=session.get("user_id"))
+
+        if user_answer != correct_answer and score > 0:
+            db.execute("UPDATE users SET score = score - 1 WHERE id = :id", id=session.get("user_id"))
 
         return redirect(url_for("question"))
 
@@ -159,8 +175,11 @@ def question():
             answer3 = wrong_answer2
             answer1 = wrong_answer3
 
+        score = db.execute("SELECT score FROM users WHERE id = :id", id=session.get("user_id"))
+        score = score[0]["score"]
 
-        return render_template("question.html", question=question, answer1=answer1, answer2=answer2, answer3=answer3, answer4=answer4, Qid=Qid)
+        return render_template("question.html", question=question, answer1=answer1, answer2=answer2, answer3=answer3, answer4=answer4, Qid=Qid, score=score)
+
 
 
 @app.route("/create", methods = ["GET", "POST"])
