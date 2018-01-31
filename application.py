@@ -131,23 +131,26 @@ def question():
         correct_answer = db.execute("SELECT correct_answer FROM questions WHERE id = :question_id", question_id=question_id)
         correct_answer = correct_answer[0]["correct_answer"]
 
-        row = db.execute("SELECT correct, wrong FROM users WHERE id = :id", id=session.get("user_id"))
-        correct = row[0]["correct"]
-        wrong = row[0]["wrong"]
-
-        if correct == 0 and wrong == 0:
-            score = 0
-        else:
-            score = round((correct * 2 - wrong) * (correct / (correct + wrong)) * 100)
-
         if user_answer == correct_answer:
-            db.execute("UPDATE users SET score = :score WHERE id = :id", score=score, id=session.get("user_id"))
             db.execute("UPDATE users SET correct = correct + 1 WHERE id = :id", id=session.get("user_id"))
 
-        if user_answer != correct_answer and score > 0:
+            row = db.execute("SELECT correct, wrong FROM users WHERE id = :id", id=session.get("user_id"))
+            correct = row[0]["correct"]
+            wrong = row[0]["wrong"]
+
+            score = round((correct * 2 - wrong) * (correct / (correct + wrong)) * 100)
             db.execute("UPDATE users SET score = :score WHERE id = :id", score=score, id=session.get("user_id"))
+
+        if user_answer != correct_answer:
             db.execute("UPDATE users SET wrong = wrong + 1 WHERE id = :id", id=session.get("user_id"))
 
+            row = db.execute("SELECT correct, wrong FROM users WHERE id = :id", id=session.get("user_id"))
+            correct = row[0]["correct"]
+            wrong = row[0]["wrong"]
+
+            score = round((correct * 2 - wrong) * (correct / (correct + wrong)) * 100)
+            db.execute("UPDATE users SET score = :score WHERE id = :id", score=score, id=session.get("user_id"))
+            
         return redirect(url_for("question"))
 
     if request.method == "GET":
