@@ -98,10 +98,13 @@ def check():
         password_unhashed = request.form.get("new_pw1")
         password_hashed = pwd_context.hash(password_unhashed)
 
+         # who is logged in?
+        session["user_id"] = rows[0]["id"]
+
         # updating the password in db
-        result = db.execute("UPDATE users SET password=:password", password=password_hashed)
+        result = db.execute("UPDATE users SET password=:password WHERE id = :id", password=password_hashed, id=session['user_id'])
         if not result:
-            return apology("that didn't work")
+            return apology("shoot, somehow it didn't work")
 
         # redirect user to profile page
         return render_template("profile.html")
