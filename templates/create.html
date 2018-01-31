@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block main %}
+<!-- fill in your question here, to create a question a person has to fill in the question and the answers */ -->
      <form action="{{ url_for('create') }}" method="post">
        <fieldset>
          <div class="form-group">
@@ -13,10 +14,11 @@
               <input type="question" class="form-control" id="question" name="question" placeholder="Question">
         </div>
       </div>
-
-		<div class="col-sm-4 offset-2">
-			<label class="question-label"><h4>Fill in your answers here:</h4></label>
-		</div>
+   
+<!-- fill in your answers here, correct answer must always be the first one. Beneath it there will be a submit button */ -->
+	<div class="col-sm-4 offset-2">
+		<label class="question-label"><h4>Fill in your answers here:</h4></label>
+	</div>
 
       <div>
           <div class="row">
