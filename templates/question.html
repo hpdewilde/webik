@@ -9,7 +9,7 @@
       <div class="timer">
         <div class="col-md-6 offset-md-4 center-block">
           <p id="demo"></p>
-            <p>Time left: <span id="countdowntimer">15</span> seconds</p>
+            <p>Next Question in: <span id="countdowntimer">15</span> seconds</p>
             <script type="text/javascript">
                 var timeleft = 15;
                 var downloadTimer = setInterval(function(){
@@ -74,12 +74,9 @@
       </div>
   <!--</form>-->
 
- <!-- redirect function, als de timer op is en moet redirecten naar een andere pagina,
-<div class="container" id="quote">
-  <p>
-    <font color="#FFFFFF"><center>Thanks for visiting our website,</center></font>
-      <p><font color="#FFFFFF"><center>“An investment in knowledge always pays the best interest.”</center></font></p>
-      <meta http-equiv="refresh" content="5;login" />
-  </p>
-</div> -->
+      <div>
+        <p>
+            <meta http-equiv="refresh" content="15;question" />
+        </p>
+      </div>
 {% endblock %}
