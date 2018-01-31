@@ -27,23 +27,42 @@
   		    <div class="col-sm-4 offset-4">
   			    <div class="tuyin first">
                     <p>
-                        <center>{{ question }}</center>
+                        <h3><center>{{ question }}</center></h3>
                     </p>
                 </div>
             </div>
       </div>
 
-      <div class="col-sm-6 offset-md-4 center-block">
-              <form action="{{ url_for('question') }}" method="post">
-                <fieldset>
-                  <button type="submit" class="btn play-btn btn-default btn-lg btn btn-outline-light" name="choice" value="{{ question_id,answer1 }}">{{ answer1 }}</button>
-                  <button type="submit" class="btn play-btn btn-default btn-lg btn btn-outline-light" name="choice" value="{{ question_id,answer2 }}">{{ answer2 }}</button>
-                  <button type="submit" class="btn play-btn btn-default btn-lg btn btn-outline-light" name="choice" value="{{ question_id,answer3 }}">{{ answer3 }}</button>
-                  <button type="submit" class="btn play-btn btn-default btn-lg btn btn-outline-light" name="choice" value="{{ question_id,answer4 }}">{{ answer4 }}</button>
-                </fieldset>
-              </form>
+    <div class="container">
+        <form action="{{ url_for('question') }}" method="post">
+          <fieldset>
+
+            <div class = "row">
+              <div class="col-sm-6 offset-3">
+                <button type="submit" class="btn play-btn btn-default btn-question-sbmt btn-lg btn-outline-light" name="choice" value="{{ question_id,answer1 }}">{{ answer1 }}</button>
+              </div>
             </div>
-        </div>
+
+            <div class = "row">
+              <div class="col-sm-6 offset-3">
+                <button type="submit" class="btn play-btn btn-default btn-question-sbmt btn-lg btn-outline-light" name="choice" value="{{ question_id,answer2 }}">{{ answer2 }}</button>
+              </div>
+            </div>
+
+            <div class = "row">
+              <div class="col-sm-6 offset-3">
+                <button type="submit" class="btn play-btn btn-default btn-question-sbmt btn-lg btn-outline-light" name="choice" value="{{ question_id,answer3 }}">{{ answer3 }}</button>
+              </div>
+            </div>
+
+            <div class = "row">
+              <div class="col-sm-6 offset-3">
+                <button type="submit" class="btn play-btn btn-default btn-question-sbmt btn-outline-light" name="choice" value="{{ question_id,answer4 }}">{{ answer4 }}</button>
+              </div>
+            </div>
+
+          </fieldset>
+        </form>
       </div>
 
       <div class = "row">
