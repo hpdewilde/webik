@@ -84,7 +84,7 @@ def changepassword():
         rows = db.execute("SELECT * FROM users WHERE id = :user_id", user_id=session['user_id'])
 
         # ensure username exists and password is correct
-        if len(rows) != 1 or not pwd_context.verify(request.form.get("password"), rows[0]["password"]): #might be different
+        if len(rows) != 1 or not pwd_context.verify(request.form.get("password"), rows[0]["password"]): 
             return apology("old password invalid")
 
         # test password 1 was submitted
