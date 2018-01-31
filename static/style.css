@@ -33,7 +33,7 @@ body {
  * Extra large button extensions. Extends `.btn`.
  */
 .btn-xlg {
-  display: block;
+  display: inline-block;
   background-color: #f97976;
   color: #fff;
   margin-left: 8px;
