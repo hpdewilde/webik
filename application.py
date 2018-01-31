@@ -143,8 +143,16 @@ def question():
         return redirect(url_for("question"))
 
     if request.method == "GET":
-        Qid = randint(501, 550)
-        row = db.execute("SELECT * FROM questions WHERE id = :id", id=Qid)
+        first_question_id = db.execute("SELECT min(id) FROM questions")
+        first_question_id = first_question_id[0]["min(id)"]
+        last_question_id = db.execute("SELECT max(id) FROM questions")
+        last_question_id = last_question_id[0]["max(id)"]
+
+        print("First question id: {}".format(first_question_id))
+        print("Last question id: {}".format(last_question_id))
+
+        question_id = randint(first_question_id, last_question_id)
+        row = db.execute("SELECT * FROM questions WHERE id = :id", id=question_id)
 
         question = row[0]['question']
         correct_answer = row[0]['correct_answer']
@@ -178,8 +186,7 @@ def question():
         score = db.execute("SELECT score FROM users WHERE id = :id", id=session.get("user_id"))
         score = score[0]["score"]
 
-        return render_template("question.html", question=question, answer1=answer1, answer2=answer2, answer3=answer3, answer4=answer4, Qid=Qid, score=score)
-
+        return render_template("question.html", question=question, answer1=answer1, answer2=answer2, answer3=answer3, answer4=answer4, question_id=question_id, score=score)
 
 
 @app.route("/create", methods = ["GET", "POST"])
