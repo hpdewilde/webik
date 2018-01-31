@@ -1,9 +1,31 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Apology
+    Leaderboard
 {% endblock %}
 
 {% block main %}
-    <img alt="Sorry!" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=http://i.imgur.com/A3ZR65I.png"/>
+    <div class="container">
+		<div class="row transparent">
+
+			<div class="col-md-6">
+				<div class="tuyin first">
+                    <h3>HIGHEST SCORE</h3>
+                    {% for row in scores %}
+                        <p><strong>{{ row.username }}:</strong> {{ row.score }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-md-6">
+				<div class="tuyin first">
+                    <h3>MOST QUESTIONS CORRECT</h3>
+                    {% for row in questions_correct %}
+                        <p><strong>{{ row.username }}:</strong> {{row.correct }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
 {% endblock %}
