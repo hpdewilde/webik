@@ -94,6 +94,8 @@ body {
 .score {
   display: block;
   color: #f97976;
+  margin-left: 8px;
+  margin-right: 8px;
   margin-top: 100px;
   padding: 18px 78px;
   font-size: 25px;
