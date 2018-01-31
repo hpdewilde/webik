@@ -190,13 +190,6 @@ def question():
 def create():
 
     # user clicks one of the buttons
-    if request.method == "POST":
-        # use HTML buttons with the ‘name’ and ‘value’ attributes
-        if request.form["choice"] == "create":
-            return render_template("create_question.html")
-        elif request.form["choice"] == "rate":
-            return render_template("rate_question.html")
-
     if request.method == "GET":
         return render_template("create.html")
 
