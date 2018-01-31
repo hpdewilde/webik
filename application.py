@@ -148,9 +148,6 @@ def question():
         last_question_id = db.execute("SELECT max(id) FROM questions")
         last_question_id = last_question_id[0]["max(id)"]
 
-        print("First question id: {}".format(first_question_id))
-        print("Last question id: {}".format(last_question_id))
-
         question_id = randint(first_question_id, last_question_id)
         row = db.execute("SELECT * FROM questions WHERE id = :id", id=question_id)
 
