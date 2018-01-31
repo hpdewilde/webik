@@ -123,7 +123,7 @@ def question():
         # check if answer was correct
 
         result = request.form.get("choice")
-        question_id, user_answer = result.split(", ")
+        question_id, user_answer = result.split(", ", 1)
 
         question_id = question_id.strip("(")
         user_answer = user_answer[1:-2]
