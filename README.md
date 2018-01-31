@@ -24,6 +24,8 @@ https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-grid-syste
 Transparent containers:
 https://bootsnipp.com/snippets/2xp9r
 
+Login:
+https://www.tutorialrepublic.com/snippets/preview.php?topic=bootstrap&file=elegant-modal-login-form-with-avatar-icon
 
 
 
