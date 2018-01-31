@@ -185,24 +185,16 @@ def question():
 
         return render_template("question.html", question=question, answer1=answer1, answer2=answer2, answer3=answer3, answer4=answer4, question_id=question_id, score=score)
 
-
 @app.route("/create", methods = ["GET", "POST"])
 def create():
-
-    # user clicks one of the buttons
-    if request.method == "GET":
-        return render_template("create.html")
-
-@app.route("/create_question", methods = ["GET", "POST"])
-def create_question():
     # user clicks on submit button
     if request.method == "POST":
         db.execute("INSERT INTO pending_questions (question, correct_answer, wrong_answer1, wrong_answer2, wrong_answer3) VALUES (:question, :correct_answer, :wrong_answer1, :wrong_answer2, :wrong_answer3)", question=request.form.get("question"), correct_answer=request.form.get("correct_answer"), wrong_answer1=request.form.get("wrong_answer1"), wrong_answer2=request.form.get("wrong_answer2"), wrong_answer3=request.form.get("wrong_answer3"))
-        return redirect(url_for("create_question"))
+        return redirect(url_for("create"))
 
     if request.method == "GET":
-        return render_template("create_question.html")
-
+        return render_template("create.html")
+    
 @app.route("/rate_question", methods = ["GET", "POST"])
 def rate_question():
     # user clicks on submit button
@@ -214,7 +206,6 @@ def rate_question():
 
     if request.method == "GET":
         return render_template("rate_question.html")
-
 
 """
 @app.route(“leaderboards”, methods = ["GET"]
