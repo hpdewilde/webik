@@ -33,6 +33,7 @@ db = SQL("sqlite:///trivia.db")
 def index():
     return apology("TODO")
 
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in."""
@@ -68,6 +69,47 @@ def login():
     else:
         return render_template("login.html")
 
+    
+@app.route("/changepassword", methods=["GET", "POST"])
+def check():
+
+    if request.method == "POST":
+
+        # test old password was submitted
+        if not request.form.get("password"):
+            return apology("must provide old password")
+
+        # query database for username
+        rows = db.execute("SELECT * FROM users WHERE id = :user_id", user_id=session['user_id'])
+
+        # ensure username exists and password is correct
+        if len(rows) != 1 or not pwd_context.verify(request.form.get("password"), rows[0]["password"]): #might be different
+            return apology("old password invalid")
+
+        # test password 1 was submitted
+        elif not request.form.get("new_pw1"):
+            return apology("must provide password")
+
+        # test password 2 was submitted
+        elif not request.form.get("new_pw2"):
+            return apology("must provide password")
+
+        # store the hash of the password and not the actual password that was typed in
+        password_unhashed = request.form.get("new_pw1")
+        password_hashed = pwd_context.hash(password_unhashed)
+
+        # updating the password in db
+        result = db.execute("UPDATE users SET password=:password", password=password_hashed)
+        if not result:
+            return apology("that didn't work")
+
+        # redirect user to profile page
+        return render_template("profile.html")
+
+    else:
+        return render_template("changepassword.html")
+    
+    
 @app.route("/logout")
 def logout():
     """Log user out."""
@@ -240,6 +282,7 @@ def profile():
 
         return render_template("profile.html", username=username, score=score, correct=correct, wrong=wrong, questions_answered=questions_answered, pct_correct=pct_correct, pct_wrong=pct_wrong)
 
+    
 @app.route("/changepassword", methods=["GET", "POST"])
 @login_required
 def changepassword():
