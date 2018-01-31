@@ -71,8 +71,9 @@ def login():
 
     
 @app.route("/changepassword", methods=["GET", "POST"])
-def check():
-
+@login_required
+def changepassword():
+    
     if request.method == "POST":
 
         # test old password was submitted
