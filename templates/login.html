@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block main %}
-    <!-- validate form is necessary for both Login & Register -->
+    <!-- validate form is necessary for Register -->
     <script>
         function validateForm() {
             var x = document.forms["myForm"]["password"].value;
@@ -20,6 +20,8 @@
             }
 
     </script>
+
+<!-- modal html, these ref to login & sign up -->
 
     <form action="{{ url_for('login') }}" method="post">
       <fieldset>
