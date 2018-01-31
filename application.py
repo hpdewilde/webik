@@ -252,11 +252,13 @@ def create():
     if request.method == "GET":
         return render_template("create.html")
 
-"""
-@app.route(“leaderboards”, methods = ["GET"]
-def leaderboards():
-    render_template(“leaderboards.html”)
-"""
+@app.route("/leaderboard", methods = ["GET"])
+def leaderboard():
+    if request.method == "GET":
+        scores = db.execute("SELECT username, score FROM users ORDER BY score DESC")
+        questions_correct = db.execute("SELECT username, correct FROM users ORDER BY correct DESC")
+
+        return render_template("leaderboard.html", scores=scores, questions_correct=questions_correct)
 
 @app.route("/profile", methods = ["GET", "POST"])
 def profile():
