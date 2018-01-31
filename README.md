@@ -8,6 +8,7 @@ of various genres. The website has a point system with which the player can get 
 - Trivia game
 - Users can create questions
 - Profile page (here users can see stats about their performance)
+- Leaderboards (users can compare their performance to the performance of other users)
 - Users can change their password
 
 #### References:
