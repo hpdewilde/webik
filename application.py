@@ -136,9 +136,11 @@ def question():
 
         if user_answer == correct_answer:
             db.execute("UPDATE users SET score = score + 2 WHERE id = :id", id=session.get("user_id"))
+            db.execute("UPDATE users SET correct = correct + 1 WHERE id = :id", id=session.get("user_id"))
 
         if user_answer != correct_answer and score > 0:
             db.execute("UPDATE users SET score = score - 1 WHERE id = :id", id=session.get("user_id"))
+            db.execute("UPDATE users SET wrong = wrong + 1 WHERE id = :id", id=session.get("user_id"))
 
         return redirect(url_for("question"))
 
