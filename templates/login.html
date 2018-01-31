@@ -5,6 +5,21 @@
 {% endblock %}
 
 {% block main %}
+    <script>
+        function validateForm() {
+            var x = document.forms["myForm"]["password"].value;
+        	var y = document.forms["myForm"]["confirmpassword"].value;
+                if (x != y) {
+                    alert("Unfortunately the passwords did not match");
+                    return false;
+                }
+            	else {
+            		return true;
+                }
+            }
+
+    </script>
+
     <form action="{{ url_for('login') }}" method="post">
       <fieldset>
         <!-- Modal HTML -->
@@ -38,7 +53,7 @@
     </fieldset>
   </form>
 
-  <form action="{{ url_for('register') }}" method="post">
+  <form name="myForm" action="{{ url_for('register') }}" onsubmit="return validateForm()" method="post">
        <fieldset>
         <!-- Modal HTML -->
          <div id="myModal2" class="modal fade">
@@ -67,7 +82,6 @@
                     <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Register</button>
                   </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -75,15 +89,14 @@
      </form>
 
        <div class="form-group">
-        <div class="col-md-6 offset-md-3 center-block">
+        <div class="col-md-6 offset-md-4 center-block">
             <a class="btn btn-default btn-outline-light btn-xlg " data-toggle="modal" href="#myModal2">SIGN UP TODAY</a> <!-- btn-signup -->
         </div>
       </div>
 
       <div class="container" id="slogan">
          <p>
-           <font color="#FFFFFF" font size="50"><center>CREATE, PLAY, COMPETE</center></font>
+           <center>CREATE, PLAY, COMPETE</center>
          </p>
       </div>
-
 {% endblock %}
