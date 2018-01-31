@@ -218,9 +218,18 @@ def leaderboards():
 @app.route("/profile", methods = ["GET", "POST"])
 def profile():
     if request.method == "GET":
-        rows = db.execute("SELECT * FROM users WHERE id = :id", id=session.get("user_id"))
-        username = rows[0]['username']
-        return render_template("profile.html", username=username)
+        row = db.execute("SELECT * FROM users WHERE id = :id", id=session.get("user_id"))
+        print(row)
+
+        username = row[0]["username"]
+        score = row[0]["score"]
+        correct = row[0]["correct"]
+        wrong = row[0]["wrong"]
+        questions_answered = correct + wrong
+        pct_correct = round(correct / questions_answered * 100, 2)
+        pct_wrong = round(wrong / questions_answered * 100, 2)
+
+        return render_template("profile.html", username=username, score=score, correct=correct, wrong=wrong, questions_answered=questions_answered, pct_correct=pct_correct, pct_wrong=pct_wrong)
 
 @app.route("/changepassword", methods=["GET", "POST"])
 @login_required
