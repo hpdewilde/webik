@@ -166,54 +166,68 @@ def play():
 @app.route("/question", methods = ["GET", "POST"])
 def question():
     if request.method == "POST":
-        # check if answer was correct
-
+        # get user answer choice and store in variable
         result = request.form.get("choice")
         question_id, user_answer = result.split(", ", 1)
 
+        # strip variables from useless characters
         question_id = question_id.strip("(")
         user_answer = user_answer[1:-2]
 
+        # find correct answer in database
         correct_answer = db.execute("SELECT correct_answer FROM questions WHERE id = :question_id", question_id=question_id)
         correct_answer = correct_answer[0]["correct_answer"]
 
+        # user answer correct
         if user_answer == correct_answer:
+            # update 'correct' column in db
             db.execute("UPDATE users SET correct = correct + 1 WHERE id = :id", id=session.get("user_id"))
-
+                
+            # get new correct and wrong scores from db
             row = db.execute("SELECT correct, wrong FROM users WHERE id = :id", id=session.get("user_id"))
             correct = row[0]["correct"]
             wrong = row[0]["wrong"]
 
+            # calculate score
             score = round((correct * 2 - wrong) * (correct / (correct + wrong)) * 100)
+            # update score
             db.execute("UPDATE users SET score = :score WHERE id = :id", score=score, id=session.get("user_id"))
 
         if user_answer != correct_answer:
+            # update 'wrong' column in db
             db.execute("UPDATE users SET wrong = wrong + 1 WHERE id = :id", id=session.get("user_id"))
 
+            # get new correct and wrong scores from db
             row = db.execute("SELECT correct, wrong FROM users WHERE id = :id", id=session.get("user_id"))
             correct = row[0]["correct"]
             wrong = row[0]["wrong"]
 
+            # calculate score
             score = round((correct * 2 - wrong) * (correct / (correct + wrong)) * 100)
+            # update score
             db.execute("UPDATE users SET score = :score WHERE id = :id", score=score, id=session.get("user_id"))
             
         return redirect(url_for("question"))
 
     if request.method == "GET":
+        # find id's from first and last question in db
         first_question_id = db.execute("SELECT min(id) FROM questions")
         first_question_id = first_question_id[0]["min(id)"]
         last_question_id = db.execute("SELECT max(id) FROM questions")
         last_question_id = last_question_id[0]["max(id)"]
 
+        # select random question from all question id's
         question_id = randint(first_question_id, last_question_id)
         row = db.execute("SELECT * FROM questions WHERE id = :id", id=question_id)
 
+        # store question/answers in variables
         question = row[0]['question']
         correct_answer = row[0]['correct_answer']
         wrong_answer1 = row[0]['wrong_answer1']
         wrong_answer2 = row[0]['wrong_answer2']
         wrong_answer3 = row[0]['wrong_answer3']
 
+        # randomize answer location
         r = randint(1,4)
 
         if r == 1:
@@ -237,6 +251,7 @@ def question():
             answer3 = wrong_answer2
             answer1 = wrong_answer3
 
+        # get score from db
         score = db.execute("SELECT score FROM users WHERE id = :id", id=session.get("user_id"))
         score = score[0]["score"]
 
@@ -246,6 +261,7 @@ def question():
 def create():
     # user clicks on submit button
     if request.method == "POST":
+        # insert user entry into db
         db.execute("INSERT INTO pending_questions (question, correct_answer, wrong_answer1, wrong_answer2, wrong_answer3) VALUES (:question, :correct_answer, :wrong_answer1, :wrong_answer2, :wrong_answer3)", question=request.form.get("question"), correct_answer=request.form.get("correct_answer"), wrong_answer1=request.form.get("wrong_answer1"), wrong_answer2=request.form.get("wrong_answer2"), wrong_answer3=request.form.get("wrong_answer3"))
         return redirect(url_for("create"))
 
@@ -255,7 +271,9 @@ def create():
 @app.route("/leaderboard", methods = ["GET"])
 def leaderboard():
     if request.method == "GET":
+        # get scores from db and order them
         scores = db.execute("SELECT username, score FROM users ORDER BY score DESC")
+        # get number of correctlty answered questions from db and order them
         questions_correct = db.execute("SELECT username, correct FROM users ORDER BY correct DESC")
 
         return render_template("leaderboard.html", scores=scores, questions_correct=questions_correct)
@@ -264,8 +282,8 @@ def leaderboard():
 def profile():
     if request.method == "GET":
         row = db.execute("SELECT * FROM users WHERE id = :id", id=session.get("user_id"))
-        print(row)
 
+        # store all profile info in variables
         username = row[0]["username"]
         score = row[0]["score"]
         correct = row[0]["correct"]
