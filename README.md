@@ -1,23 +1,29 @@
 # webik-prototype
-## TO DO
-##### apology.html
-Issue: When the apology function runs, the user is not able to interact with the navigation bar anymore and is forced to close the window or return to the previous page.
-##### index.html
-Build a suiting welcome page that the user sees before logging in.
-##### leaderboard.html
-Build a leaderboard page comparing data from every user that has played our game.
-##### play_activegame.html
-* Issue: The first button is now always the correct answer. Fix this by randomizing the position of the correct answer. 
-* Check if the user has clicked on the correct answer and if so, increment the score. 
-* Keep track of how many questions a user has answered and how many of them were answered correctly, which is necessary for the information on the profile and leaderboard pages.
+## Documentation
+#### Description website:
+This webiste is based around a trivia game and the open trivia database (see refs). The database contains 500 questions 
+of various genres. The website has a point system with which the player can get points. 
 
-##### profile.html
-Fill with information about user performance in the game.
-##### register.html
-Issue: users can register with the same username. 
-##### rate_question.html
-Create an interface where users can rate questions created by other users.
-##### Database table: questions
-We now have a database containing 50 questions that we added by running the db.py file. (The maximum that we could add in one go via the API was 50.) We still have to expand this database with a lot more questions.
-##### Overall
-Fix the design using CSS.
+#### Features:
+- Trivia game
+- Users can create questions
+- Profile page (here users can see stats about their performance)
+- Users can change their password
+
+#### References:
+The open trivia database API:
+https://opentdb.com/
+
+Validation forms:
+https://www.w3schools.com/js/js_validation.asp
+
+Guides:
+http://www.tipue.com/blog/center-a-div/
+https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-grid-system.php
+
+Transparent containers:
+https://bootsnipp.com/snippets/2xp9r
+
+
+
+
