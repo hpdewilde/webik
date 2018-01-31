@@ -1,23 +1,59 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Create
+    Create Question
 {% endblock %}
 
 {% block main %}
-   <form action="{{ url_for('create') }}" method="post">
-        <div class="container-fluid">
+     <form action="{{ url_for('create') }}" method="post">
+       <fieldset>
+         <div class="form-group">
+			<div class="col-sm-8 offset-2">
+              <label class="question-label"><h4>Fill in your question here:</h4></label>
+              <input type="question" class="form-control" id="question" name="question" placeholder="Question">
+        </div>
+      </div>
+
+		<div class="col-sm-4 offset-2">
+			<label class="question-label"><h4>Fill in your answers here:</h4></label>
+		</div>
+
+      <div>
           <div class="row">
-              <div class="col-md-4 offset-md-4 ">
-                  <a class="btn btn-outline-light btn-default  btn-xlg" name="create" href="{{ url_for('create_question') }}">C R E A T E</a>
-               </div>
-                <!--
-               <div class="col-md-4 offset-md-4 ">
-                  <a class="btn btn-outline-light btn-default  btn-rate" name="rate" href="{{ url_for('rate_question') }}">R A T E</a>
-               </div>
-               -->
-              </div>
+            <div class="col-sm-4 offset-2">
+              <input type="answer" class="form-control" id="answer" name="correct_answer" placeholder="Correct answer">
+            </div>
+            <div class="col-sm-4">
+              <input type="answer" class="form-control" id="answer" name="wrong_answer1" placeholder="Answer">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 offset-2">
+              <input type="answer" class="form-control" id="answer" name="wrong_answer2" placeholder="Answer">
+            </div>
+            <div class="col-sm-4">
+              <input type="answer" class="form-control" id="answer" name="wrong_answer3" placeholder="Answer">
+            </div>
+          </div>
+          <div class="container col-sm-2 col-sm-offset-6">
+            <div class="question-submit">
+                  <button type="submit" class="btn play-btn btn-default btn-outline-light btn-lg">SUBMIT QUESTION</button>
+            </div>
           </div>
         </div>
-    </form>
+       </fieldset>
+     </form>
+
+     <div class="row transparent">
+			  <div class="col-sm-6 offset-3">
+				    <div class="tuyin first">
+				      <h3>Community guidelines:</h3>
+				    	<p> <bold> Please fill in appropriate community standard questions and answers <br> </br>
+				    	    Create realistic questions, no obscure questions will be added to the database <br> </br>
+				    	    Be creative, the more creative the better!
+				    	    </bold></p>
+				    </div>
+				</div>
+			</div>
 {% endblock %}
+
