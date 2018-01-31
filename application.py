@@ -250,18 +250,6 @@ def create():
 
     if request.method == "GET":
         return render_template("create.html")
-    
-@app.route("/rate_question", methods = ["GET", "POST"])
-def rate_question():
-    # user clicks on submit button
-    if request.method == "POST":
-        """
-        Store user entry in database
-        """
-        return redirect(url_for("rate_question"))
-
-    if request.method == "GET":
-        return render_template("rate_question.html")
 
 """
 @app.route(“leaderboards”, methods = ["GET"]
