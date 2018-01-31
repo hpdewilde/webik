@@ -247,10 +247,10 @@ body {
   }
 
 #slogan {
+  color: #FFFFFF;
+  font-size: 50px;
   display: block;
-  color: coral;
   margin-top: 50px;
-  font-size: 25px
   }
 
 #quote {
