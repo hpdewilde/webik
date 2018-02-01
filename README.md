@@ -1,5 +1,5 @@
-# Webprogrammeren en Databases project
-# Trivia website
+# WebIK project: Trivia website
+By Hein de Wilde, Nicholas van der Veere and Stan van 't Veer
 ## Documentation
 #### Description website:
 This webiste is based around a trivia game and the open trivia database (see refs). The database contains 500 questions 
