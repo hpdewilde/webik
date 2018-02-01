@@ -1,4 +1,5 @@
-# webik-prototype
+# Webprogrammeren en Databases project
+# Trivia website
 ## Documentation
 #### Description website:
 This webiste is based around a trivia game and the open trivia database (see refs). The database contains 500 questions 
