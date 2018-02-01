@@ -1,7 +1,7 @@
 # WebIK project: Trivia website
 By Hein de Wilde, Nicholas van der Veere and Stan van 't Veer
 ## Product video
-https://youtu.be/3Blin1Vcl9s
+https://youtu.be/3BIin1Vcl9s
 ## Description
 This webiste is based around a trivia game and the Open Trivia Database (see refs). Our database contains 500 entries of questions from various genres. The website has a score system by which users can be ranked among our leaderboards.
 ## Features
