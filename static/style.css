@@ -164,6 +164,13 @@ body {
   margin-top: 20px;
   }
 
+.password-label {
+  color: #000;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 20px;
+  }
+
 #answer {
   color: #f97976;
   margin-left: 8px;
