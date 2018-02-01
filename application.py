@@ -108,7 +108,7 @@ def changepassword():
             return apology("shoot, somehow it didn't work")
 
         # redirect user to profile page
-        return render_template("profile.html")
+        return render_template("changepassword.html")
 
     else:
         return render_template("changepassword.html")
