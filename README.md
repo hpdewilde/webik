@@ -2,7 +2,7 @@
 By Hein de Wilde, Nicholas van der Veere and Stan van 't Veer
 ## Description
 This webiste is based around a trivia game and the Open Trivia Database (see refs). Our database contains 500 entries of questions from various genres. The website has a score system by which users can be ranked among our leaderboards.
-## Features:
+## Features
 - Trivia game: answer multiple choice questions and score points
 - Create questions: give suggestions for questions yourself. They will be possible be approved by the admins and added to the question database
 - Profile page: see stats about your performance
