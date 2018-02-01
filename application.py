@@ -289,8 +289,13 @@ def profile():
         correct = row[0]["correct"]
         wrong = row[0]["wrong"]
         questions_answered = correct + wrong
-        pct_correct = round(correct / questions_answered * 100, 2)
-        pct_wrong = round(wrong / questions_answered * 100, 2)
+        
+        if questions_answered == 0:
+            pct_correct = '-'
+            pct_wrong = '-'
+        else:
+            pct_correct = round(correct / questions_answered * 100, 2)
+            pct_wrong = round(wrong / questions_answered * 100, 2)
 
         return render_template("profile.html", username=username, score=score, correct=correct, wrong=wrong, questions_answered=questions_answered, pct_correct=pct_correct, pct_wrong=pct_wrong)
 
