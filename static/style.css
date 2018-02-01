@@ -26,7 +26,7 @@ body {
 /* supposedly proper way to center a div */
 .center-div {
   margin: 0 auto;
-  width: 100px;
+  width: 80%;
   }
 
 /**
@@ -106,17 +106,20 @@ body {
   }
 
 .question-lg {
-  display: block;
-  color: #f97976;
+  font-size: 60px;
+  }
+
+.question-submit {
+  margin-top: 25px;
+  font-size: 30px;
+  }
+
+.question-display {
+  text-align: center;
   margin-left: 8px;
   margin-right: 8px;
   margin-top: 20px;
-  padding: 18px 570px;
-  font-size: 25px;
-  line-height: normal;
-  -webkit-border-radius: 8px;
-     -moz-border-radius: 8px;
-          border-radius: 8px;
+  font-size: 50px;
   }
 
 .question-submit {
@@ -208,7 +211,6 @@ body {
   right: -5px;
   }
 
-/* hier moeten de kleuren veranderd worden voor de buttons */
 .modal-login .modal-footer {
   background: #ecf0f1;
   border-color: #dee4e7;
@@ -257,7 +259,7 @@ body {
   }
 
 .modal-login .btn:hover, .modal-login .btn:focus {
-  background: #45aba6; /* hier moet de kleur veranderd worden */
+  background: #45aba6; 
   outline: none;
   }
 
